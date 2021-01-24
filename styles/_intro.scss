@@ -1,0 +1,111 @@
+.main-head {
+  width: 95%;
+  margin: 0 0 0 auto;
+}
+nav {
+  @include flex(space-between, center, row);
+  min-height: 10vh;
+  width: 70%;
+  flex-wrap: wrap;
+  .logo {
+    @include flex(flex-start, center, row);
+    flex: 1 1 20rem;
+    h1 {
+      margin: 1.5rem;
+    }
+  }
+  ul {
+    @include flex(space-around, center, row);
+    flex: 1 1 40rem;
+  }
+}
+.intro {
+  min-height: 90vh;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+  @include flex(space-between, center, row);
+  h2 {
+    font-size: 5rem;
+    padding-top: 2rem;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* inline-block is used to we can reduce the width of H2 so the gradient looks good, otherwise it will
+    only have 1 color since is quite large */
+    display: inline-block;
+  }
+  h3 {
+    font-size: 4rem;
+    padding: 1.5rem 0rem;
+  }
+  p {
+    padding-top: 1rem;
+    color: $gray-text;
+  }
+}
+.intro-social {
+  margin-top: 2.5rem;
+  a {
+    margin-right: 2.5rem;
+  }
+}
+.active {
+  background: $gray-text;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+}
+.intro-text,
+.intro-images {
+  position: relative;
+  flex: 1 1 40rem;
+}
+.splash {
+  z-index: -2;
+  position: absolute;
+}
+#left-leaf {
+  animation: leaf 1.5s ease infinite alternate;
+}
+#right-leaf {
+  animation: leaf 1.5s ease infinite alternate 0.5s;
+}
+
+@keyframes leaf {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-30%);
+  }
+}
+@media screen and (max-width: 902px) {
+  html {
+    font-size: 53%;
+  }
+  .splash {
+    display: none;
+  }
+  svg {
+    width: 80%;
+  }
+  nav {
+    width: 100%;
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+.clock {
+  animation: clock 1.5s infinite linear;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}

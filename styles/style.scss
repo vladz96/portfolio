@@ -1,0 +1,29 @@
+/* INCLUDE ALL VARIABLES AND HELPER CLASSES ABOVE, then include all scss parts with @import */
+/* MINIFIED .MIN means that there is no white spaces but code still gonna work */
+$header1: 2.5rem;
+$header2: 4rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$text: 2rem;
+$background-color: #154343;
+$gradient: linear-gradient(left, #38d39f, #38a4d3);
+$gray-text: #2c2c2c;
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@import "_global";
+@import "_intro";
+@import "_projects";
+@import "_contact";
+@import "_footer";
+
+@media screen and (max-width: 754px) {
+  html {
+    font-size: 45%;
+  }
+}

@@ -1,0 +1,20 @@
+.projects {
+  @include flex(space-between, center, row);
+  display: flex;
+  /* text-align here aligns the h2 && the image!!!!!!!!!!!!!!!! */
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 3rem 0rem;
+  h2 {
+    margin: 2.5rem;
+  }
+  .travelly img,
+  .photo img {
+    width: 80%;
+    height: 8%;
+  }
+  .travelly,
+  .photo {
+    flex: 1 1 40rem;
+  }
+}
